@@ -1,32 +1,39 @@
 <script>
 
-var message;
+  var message, message2, beers, guess;
 
-/*Prompts the user to input # of beers and sets that input to the beers variable. This also sets the message variable with the corrisponding message and that message is displayed with alert*/
+  function getBeers(){
 
-var beers = prompt('How many beers have you had tonight?');
+    beers = Math.floor(Math.random()* 30 + 1);
+      console.log(beers);
 
-  if((beers >= 2) && (beers <= 5)){
+    guess = prompt('How many beers has Billy the Rockstar had tonight?');
+      console.log(guess);
 
-    message = ('You are just starting your buzz')
+    if (guess != beers) {
 
-} else if ((beers >= 6) && (beers <= 9)) {
+      message = 'Sorry, you guessed wrong!';
+      alert(message);
 
-    message = ('Now you are working on a pretty good buzz. Maybe time to call it quits since you are a "responsible" adult.')
+    } else {
 
-} else if ((beers >= 10) && (beers <= 11)) {
+      if (beers === 0) {
+        message2 = 'Billy has not had any beers yet!';
 
-    message = ('Tomorrow is probably going to suck for you. Hope you have nothing important to do in the morning.')
+      } else if (beers <= 5) {
+        message2 = 'Billy is just getting started!';
 
-} else if (beers >= 12) {
+      } else if ((beers > 5) && (beers <= 9)){
+        message2 = 'Billy is working on a pretty good buzz.';
 
-    message = ('You are a party animal! You should probably seek help.')
-}
-  else {
+      } else if ((beers > 9) && (beers <= 30)){
+        message2 = 'Billy should probably seek help.';
+      }
+        alert('You guessed it! ' + (message2));
+    }
 
-    message = ('Beer is not for everyone.')
-}
+  }
 
-alert(message);
+  getBeers();
 
 </script>
