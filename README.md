@@ -1,1 +1,4 @@
-This game prompts the user to input # of beers and sets that input to the beers variable. This also sets the message variable with the corrisponding message. That message is displayed with alert.
+Billy the Rockstar guessing game:
+User guesses number of beers Billy has had tonight.
+Alert message tells user if their guess is correct.
+
