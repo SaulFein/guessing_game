@@ -1,15 +1,17 @@
 <script>
 
-  var message, message2, beers, guess;
+var Game = function(){
+  this.beers = 0;
+  this.answerRandom = Math.floor(Math.random()* 30 + 1);
+  this.startGame = function (){
+        beers = Math.floor(Math.random()* 30 + 1);
+          console.log(beers);
 
-  function getBeers(){
+        guess = prompt('How many beers has Billy the Rockstar had tonight?');
+         console.log(guess);
+        };
 
-    beers = Math.floor(Math.random()* 30 + 1);
-      console.log(beers);
-
-    guess = prompt('How many beers has Billy the Rockstar had tonight?');
-      console.log(guess);
-
+  this.checkAnswer = function(){
     if (guess != beers) {
 
       message = 'Sorry, you guessed wrong!';
@@ -29,11 +31,14 @@
       } else if ((beers > 9) && (beers <= 30)){
         message2 = 'Billy should probably seek help.';
       }
-        alert('You guessed it! ' + (message2));
+        alert('You guessed right! ' + message2);
     }
-
   }
+}
 
-  getBeers();
+var game1 = new Game ();
+
+  game1.startGame();
+  game1.checkAnswer();
 
 </script>
