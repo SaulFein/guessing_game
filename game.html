@@ -1,44 +1,52 @@
 <script>
-
-var Game = function(){
-  this.beers = 0;
-  this.answerRandom = Math.floor(Math.random()* 30 + 1);
+'use strict';
+//This is a guessing game to guess how many beers Billy the Rockstar has had tonight.
+var Game = function(beers, badGuessMessage, numGuesses){
+  this.badGuessMessage = badGuessMessage;
+  this.beers = beers;
+  this.numGuesses = numGuesses;
   this.startGame = function (){
-        beers = Math.floor(Math.random()* 30 + 1);
           console.log(beers);
+      while (this.numGuesses) {
+          var guess = prompt('How many beers has Billy the Rockstar had tonight?');
+          console.log(guess);
 
-        guess = prompt('How many beers has Billy the Rockstar had tonight?');
-         console.log(guess);
-        };
+      if ((guess != beers) && (guess > beers)) {
 
-  this.checkAnswer = function(){
-    if (guess != beers) {
+        var message3 = 'He has not had that many.';
 
-      message = 'Sorry, you guessed wrong!';
-      alert(message);
+        alert(this.badGuessMessage + message3);
+        this.numGuesses --;
 
-    } else {
+      } else if ((guess != beers) && (guess < beers)){
+        var message4 = 'He has had more than that. ';
 
-      if (beers === 0) {
-        message2 = 'Billy has not had any beers yet!';
+        alert(this.badGuessMessage + message4);
+        this.numGuesses --;
 
-      } else if (beers <= 5) {
-        message2 = 'Billy is just getting started!';
+      } else {
 
-      } else if ((beers > 5) && (beers <= 9)){
-        message2 = 'Billy is working on a pretty good buzz.';
+        if (beers === 0) {
+          var message2 = 'Billy has not had any beers yet!';
 
-      } else if ((beers > 9) && (beers <= 30)){
-        message2 = 'Billy should probably seek help.';
+        } else if (beers <= 5) {
+          message2 = 'Billy is just getting started!';
+
+        } else if ((beers > 5) && (beers <= 9)){
+          message2 = 'Billy is working on a pretty good buzz.';
+
+        } else if ((beers > 9) && (beers <= 30)){
+          message2 = 'Billy should probably seek help.';
+        }
+          this.numGuesses = 0;
+          alert('You guessed right! ' + message2);
       }
-        alert('You guessed right! ' + message2);
     }
   }
 }
 
-var game1 = new Game ();
+var game1 = new Game (8, 'Sorry, you guessed wrong! ', 3);
 
   game1.startGame();
-  game1.checkAnswer();
 
 </script>
