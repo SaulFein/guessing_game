@@ -1,52 +1,50 @@
 <script>
 'use strict';
-//This is a guessing game to guess how many beers Billy the Rockstar has had tonight.
-var Game = function(beers, badGuessMessage, numGuesses){
+//This is a guessing game constructor.
+var Game = function(question, answer, badGuessMessage, numGuesses){
   this.badGuessMessage = badGuessMessage;
-  this.beers = beers;
+  this.answer = answer;
   this.numGuesses = numGuesses;
+  this.question = question
+  this.guess = 0;
   this.startGame = function (){
-          console.log(beers);
+          console.log(answer);
       while (this.numGuesses) {
-          var guess = prompt('How many beers has Billy the Rockstar had tonight?');
-          console.log(guess);
+          this.guess = prompt(question);
+          console.log(this.guess);
 
-      if ((guess != beers) && (guess > beers)) {
+      if ((this.guess != answer) && (this.guess > answer)) {
 
-        var message3 = 'He has not had that many.';
+        var message3 = ' Your guess is too high. Hint: the number is between 1,030 and 1,040 ';
 
         alert(this.badGuessMessage + message3);
         this.numGuesses --;
 
-      } else if ((guess != beers) && (guess < beers)){
-        var message4 = 'He has had more than that. ';
+      } else if ((this.guess != answer) && (this.guess < answer)){
+        var message4 = ' Your guess is too low. Hint: the number is between 1,030 and 1,040 ';
 
         alert(this.badGuessMessage + message4);
         this.numGuesses --;
 
       } else {
 
-        if (beers === 0) {
-          var message2 = 'Billy has not had any beers yet!';
+        var message2 = 'The answer is ' + (answer) + '.';
 
-        } else if (beers <= 5) {
-          message2 = 'Billy is just getting started!';
-
-        } else if ((beers > 5) && (beers <= 9)){
-          message2 = 'Billy is working on a pretty good buzz.';
-
-        } else if ((beers > 9) && (beers <= 30)){
-          message2 = 'Billy should probably seek help.';
-        }
-          this.numGuesses = 0;
-          alert('You guessed right! ' + message2);
+        this.numGuesses = 0;
+        alert('You guessed right! ' + message2);
       }
     }
   }
 }
 
-var game1 = new Game (8, 'Sorry, you guessed wrong! ', 3);
+var game1 = new Game('How vinyl records do I have in my collection?', 1035, 'Sorry, that is not the correct number. ', 3);
+
+var game2 = new Game ('How many beers has Billy the Rockstar had tonight?', 5, 'Sorry, you guessed wrong! ', 3);
+
+var game3 = new Game ('How many crabs did I catch in my crab pot?', 7, 'Sorry, that is not the correct number of crabs.', 3);
 
   game1.startGame();
+  //game2.startGame();
+  //game3.startGame();
 
 </script>
