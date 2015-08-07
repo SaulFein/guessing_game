@@ -8,19 +8,19 @@ var Game = function(question, answer, badGuessMessage, numGuesses){
   this.question = question
   this.guess = 0;
   this.startGame = function (){
-          console.log(answer);
+          console.log('The answer is ' + answer);
       while (this.numGuesses) {
           this.guess = prompt(question);
-          console.log(this.guess);
+          console.log('You guessed ' + this.guess);
 
-      if ((this.guess != answer) && (this.guess > answer)) {
+      if (this.guess > answer) {
 
         var message3 = ' Your guess is too high. Hint: the number is between 1,030 and 1,040 ';
 
         alert(this.badGuessMessage + message3);
         this.numGuesses --;
 
-      } else if ((this.guess != answer) && (this.guess < answer)){
+      } else if (this.guess < answer){
         var message4 = ' Your guess is too low. Hint: the number is between 1,030 and 1,040 ';
 
         alert(this.badGuessMessage + message4);
