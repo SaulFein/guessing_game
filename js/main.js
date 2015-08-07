@@ -7,8 +7,10 @@ var Game = function(question, answer, badGuessMessage, numGuesses){
   this.question = question
   this.guess = 0;
   this.startGame = function (){
+
       var container = document.getElementById("guess-response");
           console.log('The answer is ' + answer);
+
       while (this.numGuesses) {
           this.guess = prompt(question);
           console.log('You guessed ' + this.guess);
@@ -22,7 +24,6 @@ var Game = function(question, answer, badGuessMessage, numGuesses){
         //alert(this.badGuessMessage + message);
         console.log(message)
         this.numGuesses --;
-
 
       } else if (this.guess < answer){
 
