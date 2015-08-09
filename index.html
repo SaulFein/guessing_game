@@ -12,7 +12,10 @@
           margin: 0 auto;
         }
         body {
-        background-color: red;
+          background-color: red;
+        }
+        ul {
+          list-style-type:none
         }
       </style>
     </head>
@@ -30,7 +33,11 @@
 
       <button id="btn" onclick="game1.startGame()">Start Game</button>
 
+      <button id="btn" onclick="game1.hintButton()">Hint</button>
+
       <section id="guess-response"> </section>
+
+      <section id="hint-1"> </section>
 
       <h2 align = "center">Some of my favorites!</h2>
       <table align = "center">
@@ -49,9 +56,9 @@
       </table>
       <br />
 
-      <div style="text-align:center">
+      <div align = "center">
         <h3>Awesome websites dedicated to music and vinyl!</h3>
-          <ul>
+          <ul align = "center">
             <li><a href="http://soulstrut.com/"><font size="5">Soul Strut</font></a></li>
             <li><a href="http://www.discogs.com/"><font size="5">Discogs</font></a></li>
             <li><a href="http://waxidermy.com/"><font size="5">Waxidermy</font></a></li>
