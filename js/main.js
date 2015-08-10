@@ -54,7 +54,7 @@ var Game = function(question, answer, badGuessMessage, numGuesses, clue){
   }
 }
 
-  var game1 = new Game('How vinyl records do I have in my collection?', 1035, 'Sorry, that is not the correct number. ', 3, 'The number is between 1,030 and 1,040.');
+  var game1 = new Game('How many vinyl records do I have in my collection?', 1035, 'Sorry, that is not the correct number. ', 3, 'The number is between 1,030 and 1,040.');
 
 
 
