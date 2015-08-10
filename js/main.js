@@ -15,11 +15,11 @@ var Game = function(question, answer, badGuessMessage, numGuesses, clue){
   }
   this.startGame = function (){
       var container = document.getElementById("guess-response");
-          console.log('The answer is ' + answer);
+      console.log('The answer is ' + answer);
 
       while (this.numGuesses) {
-          this.guess = prompt(question);
-          console.log('You guessed ' + this.guess);
+        this.guess = prompt(question);
+        console.log('You guessed ' + this.guess);
 
       if (this.guess > answer) {
 
@@ -55,14 +55,4 @@ var Game = function(question, answer, badGuessMessage, numGuesses, clue){
 }
 
   var game1 = new Game('How many vinyl records do I have in my collection?', 1035, 'Sorry, that is not the correct number. ', 3, 'The number is between 1,030 and 1,040.');
-
-
-
-
-
-
-
-
-
-
 
